@@ -1,0 +1,18 @@
+{
+  "name": "my-restaurant-api",
+  "version": "1.0.0",
+  "description": "MyRestaurantAPI",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mssql": "^8.1.2",
+    "tedious": "^14.6.0"
+  }
+}
