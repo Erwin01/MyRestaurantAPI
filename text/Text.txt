@@ -1,0 +1,147 @@
+
+
+Install New NPM Packages / Instalar los nuevos paquetes de npm
+
+- npm install body-parser: Analizador de cuerpo
+               Básicamente, lo que 'body-parser' es lo que permite a Express leer el cuerpo y luego analizarlo en un objeto Json que podamos entender. 
+               (Para leer los datos HTTP POST solicitudes).
+
+- npm install express: Express es un marco de aplicación web de Node.js mínimo y flexible que proporciona un conjunto sólido de funciones para desarrollar aplicaciones web y móviles. 
+           Facilita el desarrollo rápido de aplicaciones web basadas en nodos. 
+
+           Las siguientes son algunas de las características principales del marco Express:
+           Permite configurar middlewares para responder a solicitudes HTTP.
+
+           * Define una tabla de enrutamiento que se utiliza para realizar diferentes acciones según el método HTTP y la URL.
+
+           * Permite representar dinámicamente páginas HTML en función de pasar argumentos a plantillas.
+
+
+- npm install mssql: Cliente de Microsoft SQL Server para Node.js / Base de datos
+
+- npm install tedious: Tedious es una implementación de Javascript puro, del protocolo TDS (Protocolo de flujo de datos tabulares), que se utiliza para interactuar con 
+           instancias de SQL Server de Microsoft.
+           
+           Está destinado a ser una implementación bastante delgada del protocolo, sin demasiada funcionalidad adicional.
+
+
+
+public folder/carpeta: Es donde nosotros copiamos todas las imagenes de la aplicación.
+
+routes folder/carpeta: Es donde esta el enrutamiento de la API
+
+OPTIONAL - Example package.json
+{
+  "name": "my-restaurant-api",
+  "version": "1.0.0",
+  "description": "MyRestaurantAPI",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mssql": "^8.1.2",
+    "tedious": "^14.6.0"
+  }
+}
+
+
+
+
+METHODS HTTP 
+POSTMAN - Advanced REST Client 
+Navigators: Chrome - Firefox - Microsoft Edge...
+
+//=========================================================================
+    GET - GEAT ALL
+//=========================================================================
+
+Optional
+Headers: Accept - application/json
+Headers: Content-Type - application/x-www-form-urlencoded
+Body: application/x-www-form-urlencoded - Form data (www.url-form-encoded)
+
+URL: http://localhost:5000/userAll?key=123456
+
+{"success":true,"result":[{"UserId":1,"UserPhone":"3102578961","Name":"Kevin Huertas","Address":"Calle 45A 28-63"},{"UserId":2,"UserPhone":"3125541230","Name":"Andres Tapias","Address":"Diagonal 11A 45 Sur"}]}
+
+
+
+
+//=========================================================================
+    GET - GET BY ID
+//=========================================================================
+
+Optional
+Headers: Accept - application/json
+Headers: Content-Type - application/x-www-form-urlencoded
+Body: application/x-www-form-urlencoded - Form data (www.url-form-encoded)
+
+URL: http://localhost:5000/userById?key=123456&userid=1
+
+{"success":true,"result":[{"userPhone":"3125541230","name":"Andres Tapias","address":"Diagonal 11A 45 Sur","userid":2}]}
+
+
+
+
+//=========================================================================
+    GET - GET BY NAME
+//=========================================================================
+
+Optional
+Headers: Accept - application/json
+Headers: Content-Type - application/x-www-form-urlencoded
+Body: application/x-www-form-urlencoded - Form data (www.url-form-encoded)
+
+URL: http://localhost:5000/searchUser?key=123456&Name=An
+
+{"success":true,"result":[{"UserId":2,"UserPhone":"3125541230","Name":"Andres Tapias","Address":"Diagonal 11A 45 Sur"}]}
+
+
+
+
+//=========================================================================
+    POST / CREATE AND UPDATE
+//=========================================================================
+
+Optional
+Headers: Accept - application/json
+Headers: Content-Type - application/x-www-form-urlencoded
+Body: application/x-www-form-urlencoded - Form data (www.url-form-encoded)
+
+URL: http://localhost:5000/user?key=123456
+
+key - 123456
+userid - 3
+userPhone - 1234567890
+userName - Andres Tapias
+userAddress - Diagonal 11A 55 Sur
+
+{
+"userid":"2",
+"userPhone":"1234567890",
+"userName":"Andres Tapias",
+"userAddress":"Diagonal 11A 45 Sur",
+"key":"123456"
+}
+
+
+
+//=========================================================================
+    DELETE / DELETE
+//=========================================================================
+
+Optional
+Headers: Accept - application/json
+Headers: Content-Type - application/x-www-form-urlencoded
+Body: application/x-www-form-urlencoded - Form data (www.url-form-encoded)
+
+URL: http://localhost:5000/deleteUser?key=123456&userid=2
+
+
+
